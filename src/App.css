@@ -1,38 +1,462 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: white;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.darkmode {
+  background-color: #212e37 !important;
+  color: white !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.darkmode2 {
+  background-color: #2b3743 !important;
+  color: white !important;
+}
+
+input.darkmode2::placeholder {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: #ffffff;
+  z-index: 125;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+header h2 {
+  font-weight: 800;
+}
+
+header button {
+  width: 10%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+header button img {
+  height: 18px;
+}
+
+/* ---------------main---------------------- */
+main {
+  min-height: 90vh;
+}
+
+#filterpart {
+  min-height: 13vh;
+  /* position: sticky; */
+  /* top: 10vh; */
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#arrbtm {
+  rotate: 90deg;
+}
+
+#searchbar {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+#searchicon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 25px;
+}
+
+#searchicon img {
+  width: 20px;
+}
+
+#searchbar input {
+  padding: 15px 80px;
+  border: 0;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+#searchbar input::placeholder {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* --------------------- */
+#select {
+  /* height: 100%; */
+  /* width: 25%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#selectbtn {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  border-radius: 5px;
+  /* background-color: white; */
+  font-weight: 600;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+#selectbtn img {
+  width: 15px;
+}
+
+#selectchose {
+  position: absolute;
+  top: calc(10vh + 11%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  height: auto;
+  width: 15.5%;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  background-color: white;
+  display: none;
+  transition: 0.5s ease;
+  animation: opaselect 0.5s ease-in-out forwards;
+  overflow: hidden;
+}
+
+@keyframes opaselect {
+  0% {
+    opacity: 0.8;
+    /* height: 0; */
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    opacity: 1;
+    /* height: auto; */
+  }
+}
+
+#selectchose button {
+  padding: 8px;
+  width: 100%;
+  border: 0;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+/* ---------row------------------------ */
+#row {
+  height: calc(100% - 15%);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.card {
+  height: 20em;
+  width: 16em;
+  margin: 30px 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: transparent;
+  /* color: white; */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.cardimg {
+  background-color: white;
+  height: 50%;
+  width: 100%;
+}
+
+.cardimg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 50%;
+  width: 100%;
+  padding: 0 30px;
+  font-size: 14px;
+  font-weight: 800;
+  backdrop-filter: blur(5px);
+  color: inherit;
+  background-color: inherit;
+}
+
+.cardinfo ul {
+  list-style: none;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardinfo ul li {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.cardinfo ul li h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cardinfo ul li span {
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 5px;
+}
+
+/* --------------------------------------------------------------- */
+#det {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+}
+
+#backdiv {
+  width: 90%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+
+#backdiv button {
+  padding: 5px;
+  width: 10%;
+  background-color: transparent;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+#backdiv button svg {
+  margin-right: 5px;
+}
+
+
+#carddet {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#detimg {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#detimg img {
+  width: 100%;
+}
+
+#detinfo {
+  height: 100%;
+  width: 50%;
+}
+
+#ttinfo {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+
+#ppinfo {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+#ppinfo ul {
+  list-style: none;
+}
+
+#ppinfo ul li {
+  margin: 10px 0;
+  display: flex;
+
+}
+
+#ppinfo ul li span {
+  margin-left: 5px;
+
+}
+
+#secinfo {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+}
+
+#brc {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 5px;
+}
+
+.brcountr {
+  /* padding: 3px; */
+  min-width: 100px;
+  min-height: 30px;
+  border-radius: 5px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+/* -----------------media query------------------- */
+@media screen and (max-width:450px) {
+  header {
+    padding: 0 20px;
+  }
+
+  header h2 {
+    font-size: 14px;
+  }
+
+  header button {
+    width: 30%;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  #filterpart {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 25vh;
+  }
+
+  #searchbar {
+    width: 100%;
+  }
+
+  #select {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #selectbtn {
+    width: 50%;
+    height: 50px;
+  }
+
+  #selectchose {
+    top: 36vh;
+    width: 45%;
+  }
+
+  #backdiv button {
+    width: 30%;
+  }
+
+  #detimg {
+    width: 100%;
+    height: 30%;
+  }
+
+  #detimg img {
+    width: 100%;
+  }
+
+  #carddet {
+    flex-direction: column;
+    height: 100%;
+  }
+
+
+  #detinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #ppinfo {
+    flex-direction: column;
+  }
+
+  #ttinfo {}
+
+  #secinfo {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
   }
 }

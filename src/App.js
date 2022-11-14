@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import React, { useState } from 'react';
+import Det from './components/det';
+import Header from './components/header';
+import Main from './components/main';
 
 function App() {
+  const [mode, setMode] = useState("light");
+  const changemod = () => {
+    if (mode == "light") {
+      setMode("dark")
+    }
+    else {
+      setMode("light")
+    }
+    console.log(mode)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header onchangemode={changemod} mode={mode} />
+      <Routes>
+        <Route path='/' element={<Main mode={mode} />} />
+        <Route path='/:namecountry' element={<Det mode={mode} />} />
+      </Routes>
     </div>
   );
 }
