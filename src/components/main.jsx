@@ -2,6 +2,7 @@ import Card from "./cardtempl";
 import React, { useState, useEffect } from "react";
 import { Routes } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io"
+import { GoSearch } from "react-icons/go"
 const Main = ({ mode }) => {
     const [inputvalue, setInpval] = useState("");
     const [data, setData] = useState([]);
@@ -109,7 +110,7 @@ const Main = ({ mode }) => {
             <section id="filterpart">
                 <div id="searchbar">
                     <div id="searchicon" onClick={() => searchbyinput(inputvalue)}>
-                        <img src="images/search.png" alt="searchicon" />
+                        <GoSearch />
                     </div>
                     <input id="serinp" type="text" value={inputvalue} onChange={(e) => setInpval(e.target.value)} placeholder="Search for a country ..." />
 
