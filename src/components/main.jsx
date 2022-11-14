@@ -103,7 +103,6 @@ const Main = ({ mode }) => {
             //     elem.classList.remove("darkmode2")
             // })
         }
-        console.log("mainchanged")
     }
     return (
         <main>

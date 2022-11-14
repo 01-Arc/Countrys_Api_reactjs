@@ -47,7 +47,6 @@ const Det = ({ mode }) => {
                 elem.classList.remove("darkmode2")
             })
         }
-        console.log(" det changed")
     }
     return (
         <section id="det">
